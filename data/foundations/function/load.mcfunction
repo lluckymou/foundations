@@ -1,0 +1,2 @@
+scoreboard objectives add foundations_days dummy
+scoreboard objectives add foundations_rng dummy

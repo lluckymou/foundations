@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_materials": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:coal",
+              "minecraft:charcoal",
+              "minecraft:copper_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:copper_torch"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:copper_torch"
+    ]
+  }
+}

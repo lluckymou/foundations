@@ -1,0 +1,1 @@
+execute as @e[type=item, nbt={Age:0s}, tag=!processed_death_item] at @s if entity @p[distance=..2, nbt={Health:0f}] run data merge entity @s {Glowing:1b, Tags:["processed_death_item"]}

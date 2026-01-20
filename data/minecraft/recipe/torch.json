@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:stick",
+    "I": "minecraft:iron_nugget",
+    "X": [
+      "minecraft:coal",
+      "minecraft:charcoal"
+    ]
+  },
+  "pattern": [
+    "I",
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:torch"
+  }
+}

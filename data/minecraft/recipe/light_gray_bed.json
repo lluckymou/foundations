@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bed",
+  "key": {
+    "S": "minecraft:string",
+    "#": "minecraft:light_gray_wool",
+    "X": "#minecraft:planks"
+  },
+  "pattern": [
+    "SSS",
+    "###",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:light_gray_bed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#foundations:speed_mobs",
+    "minecraft:evoker",
+    "minecraft:vindicator",
+    "minecraft:pillager",
+    "minecraft:ravager",
+    "minecraft:breeze",
+    "minecraft:hoglin",
+    "minecraft:piglin",
+    "minecraft:zoglin"
+  ]
+}
