@@ -20,10 +20,10 @@ By targeting the most fundamental aspects of the game, this pack creates a compl
    > Standard furnaces are inefficient, yielding only **nuggets** from iron, copper, and gold ore. Accessing full ingots is now gated behind the *Blast Furnace*, giving a clear purpose to mid-tier machinery.
 
 4. **Earned Rest**
-   > Beds require string to craft and require at least an **Iron Axe** to be broken/moved. Your spawn point is no longer a right; it is an investment that is difficult to relocate.
+   > Beds require string to craft and drop their wool when broken (similar to bookcases). Your spawn point is no longer a right; it is an investment that is difficult to relocate.
 
 5. **Relentless Nights**
-   > Hostile mobs move slightly faster. Outrunning the night is no longer a trivial task—you must be prepared to fight, build, or hide.
+   > Hostile mobs move slightly faster to account for sprinting. Outrunning the night is no longer a trivial task—you must be prepared to fight, build, or hide.
 
 ---
 
