@@ -2,26 +2,113 @@
 
 **Maximum impact** through **radical simplicity.**
 
-*Foundations* is a minimalist progression datapack designed under the **Pareto Principle**: applying minimal changes to transform 80% of the gameplay experience. Instead of cluttering the game with hundreds of new items, *Foundations* recalibrates Minecraft’s core mechanics to restore the weight of survival, the value of resources, and the dread of the dark present in the Alpha and Beta versions of the game.
+*Foundations* is an ultra-minimalist progression datapack designed under the _Pareto Principle_: applying **minimal changes** to transform 80% of the gameplay experience.
+
+Instead of cluttering the game with hundreds of new items, *Foundations* recalibrates Minecraft's core mechanics (with 5 feature changes and 2 small tweaks) to restore the weight of survival, the value of resources, and the dread of the dark present in the Alpha and Beta versions of the game.
 
 ---
 
-## 🏛️ The 5 Changes of Foundations
+## 🏛️ The Five Changes
 
-1. **Deepslate Age**
-   > Stone tools now require *Deepslate*. This pushes you deeper into the world for basic progression, making the transition out of the wood age a conscious descent.
-2. **The Price of Light**
-   > Torches require iron to craft. Lighting up a cave is no longer a "spam" mechanic, but a strategic decision that demands resource management.
-3. **Industrial Refinement**
-   > Standard furnaces yield only **nuggets** from ores. Smelting full ingots is gated behind the *Blast Furnace*, giving a clear purpose to mid-tier machinery.
-4. **Earned Rest**
-   > Beds require string and drop wool when broken. Setting a spawn point and skipping nights is an investment, not a convenience you can easily relocate.
-5. **Dynamic Hostility**
-   > Hostile mobs are no longer static. They feature randomized stats that scale with your world's age, making every encounter slightly unpredictable and dangerous.
+### 1. Deepslate Age
+<table>
+<tr>
+<td>
+Stone tools now require <b>Deepslate</b>. This pushes you deeper into the world for basic progression, making the transition out of the "Wood Age" a conscious descent.
+</td>
+<td width="300">
 
-### 🛠️ Smaller Tweaks
-* **Death Glow:** Because of the slower progression, dropped items from player deaths emit a **glowing outline** when standing nearby, helping you (and others) locate your gear within the 5-minute despawn window.
-* **Primitive Heat:** To avoid campfire spamming, campfires are crafted unlit; you must use flint and steel or fire charges to start them.
+| Input | | Output |
+| :---: | :---: | :---: |
+| <img src="examples/stone_tool_materials.gif" width="32"> <img src="examples/stone_tool_materials.gif" width="32"> <img src="examples/stone_tool_materials.gif" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/stone_tool.png" width="32"> |
+
+</td>
+</tr>
+</table>
+
+### 2. The Price of Light
+<table>
+<tr>
+<td>
+Torches require iron to craft. Lighting up a cave is no longer a "spam" mechanic, but a strategic decision that demands resource management.
+</td>
+<td width="300">
+
+| Input | | Output |
+| :---: | :---: | :---: |
+| <img src="examples/air.png" width="32"> <img src="examples/torch_nuggets.gif" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/coal.gif" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/torches.gif" width="32"> |
+
+</td>
+</tr>
+</table>
+
+### 3. Industrial Refinement
+<table>
+<tr>
+<td>
+Standard furnaces yield only <b>nuggets</b> from ores. Smelting full ingots is gated behind the <b>Blast Furnace</b>, giving a clear purpose to mid-tier machinery.
+</td>
+<td width="300">
+
+| Input | | Output |
+| :---: | :---: | :---: |
+| <img src="examples/air.png" width="32"> <img src="examples/raw.gif" width="32"> <img src="examples/air.png" width="32"> | <img src="examples/furnace_flame.gif" width="32"> | <img src="examples/nuggets.gif" width="32"> |
+
+</td>
+</tr>
+</table>
+
+### 4. Earned Rest
+<table>
+<tr>
+<td>
+Beds require string and drop wool when broken. Setting a spawn point and skipping nights is an investment, not a convenience you can easily relocate.
+</td>
+<td width="300">
+
+| Input | | Output |
+| :---: | :---: | :---: |
+| <img src="examples/string.png" width="32"> <img src="examples/string.png" width="32"> <img src="examples/string.png" width="32"><br><img src="examples/wool.gif" width="32"> <img src="examples/wool.gif" width="32"> <img src="examples/wool.gif" width="32"><br><img src="examples/planks.gif" width="32"> <img src="examples/planks.gif" width="32"> <img src="examples/planks.gif" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/beds.gif" width="32"> |
+
+</td>
+</tr>
+</table>
+
+### 5. Dynamic Hostility
+Hostile mobs are no longer static. They feature randomized stats that scale with your world's age, making every encounter slightly unpredictable and dangerous.
+
+> 📊 **[View Scaling Stats & Affected Mobs](#-dynamic-hostility)**
+
+---
+
+### 🛠️ Balancing Tweaks
+* **Primitive Heat:** To keep light sources precious and strategic, campfires are crafted unlit, requiring flint and steel (iron) or fire charges to light them up.
+* **Death Retrieval:** Because progression is slower and resources are precious, losing gear becomes a major setback. Items dropped upon a player's death emit a **glowing outline** when nearby to ensure that reclaiming your inventory remains a high-stakes journey rather than a frustrating guessing game.
+
+---
+
+## 📜 Design Philosophy
+The goal is **deliberate friction**. Minecraft's original vision was significantly altered post-Beta 1.8 with the introduction of sprinting and abundant resources, diluting the inherent danger of the world significantly. _Foundations_ uses the **Pareto Principle** to prove that you don't need massive overhauls to fix this: minimal, surgical changes with a strong philosophical basis can restore the survival spirit where every choice carries weight, just like in the Alpha and Beta days.
+
+### 🌀 The Cycle of Survival
+_Foundations_ closes the loop of the Minecraft experience by following the natural flow of the ancient **Wuxing** (The Five Phases) scheme. Every mechanic is interconnected:
+
+1. **Exploration (水 - Water):** You find yourself with few to no resources. To sustain your cycle, you must flow back into the world: braving deep caves and distant lands to acquire new materials.
+2. **Building (木 - Wood):** You modify the world. You settle down, build farms, storage systems, and beds to secure your progress. This is the phase of expansion and decoration.
+3. **Time (火 - Fire):** Construction and routine consume time. As you spend hours perfecting your builds, the "heat" of the world rises. Time is the fuel for what comes next.
+4. **Evolution (土 - Earth):** The environment "hardens". Just like how safe days naturally turn into dangerous nights, as time accumulates, so does the threat. _Dynamic Hostility_ is the world's long-term natural response to your presence.
+5. **Crafting (金 - Metal):** As mobs evolve, your current gear becomes obsolete. You are forced into upgrading your equipment to maintain your footing against the new level of danger, depleting your resources by the costs of combat/repairs and equipment upgrades.
+
+_Foundations_ is not about punishment; it's about **interdependence**. By making the basics harder, **every choice carries weight**. To master the world, you must _respect its flow_.
+
+### ⚖️ The Law of Inhibition
+Beyond the generation of resources, _Foundations_ also follows a balance of inhibition. Every in-game mechanic has to check an excess or stabilize a threat:
+
+- **Building checks Evolution:** Your base and bed are what keep the hardened world at bay, providing the refuge against rising hostility.
+- **Evolution checks Exploration:** The increasing difficulty keeps your exploration in check, preventing you from wandering mindlessly through the map without preparation.
+- **Exploration checks Time:** Finding new materials reduces the urgency created by the passage of time, "cooling" the pressure of survival with better resources.
+- **Time checks Crafting:** The relentless passage of days limits the lifespan of your gear; as time moves forward, it eventually renders your current equipment obsolete.
+- **Crafting checks Building:** Technical progress limits your growth; your base can only be as strong and efficient as the tools you are able to manufacture.
 
 ---
 
@@ -32,8 +119,8 @@ As the world ages, mobs "learn" to counter your progression. Stats are randomize
 | ‎  | **Day 0+** | **Day 5+** | **Day 10+** | **Day 25+** | **Day 50+** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **🥾 Movement Speed** | `0.3`, `0.325` | `0.3`, `0.325`, `0.35` | `0.3`, `0.325`, `0.35`, `0.4` | `0.3`, `0.325`, `0.35`, `0.4` | `0.3`, `0.325`, `0.35`, `0.4` |
-| **⚔️ Attack Damage** | — | `+1` | `+1`, `+3` | `+1`, `+3`, `+5` | `+1`, `+3`, `+5` |
-| **🛡️ Armor Points** | — | — | `2` | `2`, `5` | `2`, `5`, `8` |
+| **⚔️ Attack Damage** | <img src="examples/air.png" width="32"> | `+1` | `+1`, `+3` | `+1`, `+3`, `+5` | `+1`, `+3`, `+5` |
+| **🛡️ Armor Points** | <img src="examples/air.png" width="32"> | <img src="examples/air.png" width="32"> | `2` | `2`, `5` | `2`, `5`, `8` |
 
 | ‎  | 🧬 Affected Hostiles |
 | :--- | :--- |
@@ -41,22 +128,8 @@ As the world ages, mobs "learn" to counter your progression. Stats are randomize
 | **🛡️ Armor Points** | **All Above** + Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins. |
 | **⚔️ Attack Damage** | **All Above** + Phantoms. |
 
-## 📚 Recipes
-
-| Input | | Output |
-| :---: | :---: | :---: |
-| <img src="examples/stone_tool_materials.gif" width="32"> <img src="examples/stone_tool_materials.gif" width="32"> <img src="examples/stone_tool_materials.gif" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/stone_tool.png" width="32"> |
-| <img src="examples/raw.gif" width="32"> | <img src="examples/furnace_flame.gif" width="32"> | <img src="examples/nuggets.gif" width="32"> |
-| <img src="examples/air.png" width="32"> <img src="examples/torch_nuggets.gif" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/coal.gif" width="32"> <img src="examples/air.png" width="32"><br><img src="examples/air.png" width="32"> <img src="examples/stick.png" width="32"> <img src="examples/air.png" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/torches.gif" width="32"> |
-| <img src="examples/string.png" width="32"> <img src="examples/string.png" width="32"> <img src="examples/string.png" width="32"><br><img src="examples/wool.gif" width="32"> <img src="examples/wool.gif" width="32"> <img src="examples/wool.gif" width="32"><br><img src="examples/planks.gif" width="32"> <img src="examples/planks.gif" width="32"> <img src="examples/planks.gif" width="32"> | <img src="examples/crafting_arrow.gif" width="32"> | <img src="examples/beds.gif" width="32"> |
-
 ---
 
-## 📜 Design Philosophy
-The goal is **deliberate friction**. By making the basics (combat, light, tools, and sleep) slightly harder, every milestone feels earned. It transforms Minecraft from a sandbox where resources are trivial into a survival experience where every choice carries weight, just like in the Alpha and Beta days.
+This project is **not** affiliated with Mojang Studios.
 
----
-
-This project is **not** affiliated with Mojang Studios
-
-_The Minecraft item icons are copyright © 2009-2026 Mojang Studios_
+_The Minecraft item icons are copyright © 2009-2026 Mojang Studios._
