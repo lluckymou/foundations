@@ -1,0 +1,1 @@
+execute as @a[nbt={SelectedItem:{components:{"minecraft:rarity":"uncommon"}}}] run function foundations:fire_plough/check_visual

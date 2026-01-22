@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "sticks",
+  "key": {
+    "#": "#minecraft:planks"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:stick",
+    "components": {
+      "minecraft:rarity": "uncommon",
+      "consumable": {
+        "animation": "drink",
+        "consume_seconds": 1,
+        "has_consume_particles": false,
+        "sound": "minecraft:item.spear_wood.attack"
+      }
+    }
+  }
+}

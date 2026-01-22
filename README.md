@@ -1,10 +1,12 @@
 # Foundations 🏕️
 
-**Maximum impact** through **radical simplicity.**
+**Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
 
 *Foundations* is an ultra-minimalist progression datapack designed under the _Pareto Principle_: applying **minimal changes** to transform 80% of the gameplay experience.
 
-Instead of cluttering the game with hundreds of new items, *Foundations* recalibrates Minecraft's core mechanics (with 5 feature changes and 2 small tweaks) to restore the weight of survival, the value of resources, and the dread of the dark present in the Alpha and Beta versions of the game.
+Instead of cluttering the game with hundreds of new items, *Foundations* recalibrates Minecraft's core mechanics (with 5 feature changes and 3 small tweaks) to reintroduce a learning curve to every playthrough, restore the weight of survival, the value of resources, and the dread of the dark present in the Alpha and Beta versions of the game.
+
+> ⚠️ **Not for casual builders:** Foundations is designed for players seeking a slower survival-first experience inspired by alpha and beta Minecraft.
 
 ---
 
@@ -30,7 +32,7 @@ Stone tools now require <b>Deepslate</b>. This pushes you deeper into the world 
 <table>
 <tr>
 <td>
-Torches require iron to craft. Lighting up a cave is no longer a "spam" mechanic, but a strategic decision that demands resource management.
+Torches require iron to craft and sticks can create fire. Lighting up spaces permanently is no longer a "spam" mechanic, but a strategic decision that demands resource management.
 </td>
 <td width="300">
 
@@ -75,46 +77,7 @@ Beds require string and drop wool when broken. Setting a spawn point and skippin
 </table>
 
 ### 5. Dynamic Hostility
-Hostile mobs are no longer static. They feature randomized stats that scale with your world's age, making every encounter slightly unpredictable and dangerous.
-
-> 📊 **[View Scaling Stats & Affected Mobs](#-dynamic-hostility)**
-
----
-
-### 🛠️ Balancing Tweaks
-* **Primitive Heat:** To keep light sources precious and strategic, campfires are crafted unlit, requiring flint and steel (iron) or fire charges to light them up.
-* **Death Retrieval:** Because progression is slower and resources are precious, losing gear becomes a major setback. Items dropped upon a player's death emit a **glowing outline** when nearby to ensure that reclaiming your inventory remains a high-stakes journey rather than a frustrating guessing game.
-
----
-
-## 📜 Design Philosophy
-The goal is **deliberate friction**. Minecraft's original vision was significantly altered post-Beta 1.8 with the introduction of sprinting and abundant resources, diluting the inherent danger of the world significantly. _Foundations_ uses the **Pareto Principle** to prove that you don't need massive overhauls to fix this: minimal, surgical changes with a strong philosophical basis can restore the survival spirit where every choice carries weight, just like in the Alpha and Beta days.
-
-### 🌀 The Cycle of Survival
-_Foundations_ closes the loop of the Minecraft experience by following the natural flow of the ancient **Wuxing** (The Five Phases) scheme. Every mechanic is interconnected:
-
-1. **Exploration (水 - Water):** You find yourself with few to no resources. To sustain your cycle, you must flow back into the world: braving deep caves and distant lands to acquire new materials.
-2. **Building (木 - Wood):** You modify the world. You settle down, build farms, storage systems, and beds to secure your progress. This is the phase of expansion and decoration.
-3. **Time (火 - Fire):** Construction and routine consume time. As you spend hours perfecting your builds, the "heat" of the world rises. Time is the fuel for what comes next.
-4. **Evolution (土 - Earth):** The environment "hardens". Just like how safe days naturally turn into dangerous nights, as time accumulates, so does the threat. _Dynamic Hostility_ is the world's long-term natural response to your presence.
-5. **Crafting (金 - Metal):** As mobs evolve, your current gear becomes obsolete. You are forced into upgrading your equipment to maintain your footing against the new level of danger, depleting your resources by the costs of combat/repairs and equipment upgrades.
-
-_Foundations_ is not about punishment; it's about **interdependence**. By making the basics harder, **every choice carries weight**. To master the world, you must _respect its flow_.
-
-### ⚖️ The Law of Inhibition
-Beyond the generation of resources, _Foundations_ also follows a balance of inhibition. Every in-game mechanic has to check an excess or stabilize a threat:
-
-- **Building checks Evolution:** Your base and bed are what keep the hardened world at bay, providing the refuge against rising hostility.
-- **Evolution checks Exploration:** The increasing difficulty keeps your exploration in check, preventing you from wandering mindlessly through the map without preparation.
-- **Exploration checks Time:** Finding new materials reduces the urgency created by the passage of time, "cooling" the pressure of survival with better resources.
-- **Time checks Crafting:** The relentless passage of days limits the lifespan of your gear; as time moves forward, it eventually renders your current equipment obsolete.
-- **Crafting checks Building:** Technical progress limits your growth; your base can only be as strong and efficient as the tools you are able to manufacture.
-
----
-
-## 📊 Dynamic Hostility
-
-As the world ages, mobs "learn" to counter your progression. Stats are randomized for every affected mob upon spawning. The values below represent the possible "rolls" the RNG can select for each attribute.
+Hostile mobs are no longer static. They feature randomized RNG stats that scale with your world's age, making every encounter slightly unpredictable and dangerous.
 
 | ‎  | **Day 0+** | **Day 5+** | **Day 10+** | **Day 25+** | **Day 50+** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -130,6 +93,33 @@ As the world ages, mobs "learn" to counter your progression. Stats are randomize
 
 ---
 
-This project is **not** affiliated with Mojang Studios.
+### 🛠️ Balancing Tweaks
+* **Primitive Lighting**: Right-clicking blocks with sticks can create fire.
+* **No Free Lunch:** Campfires are crafted unlit.
+* **Death Retrieval:** Items dropped upon a player's death emit a **glowing outline** when nearby.
+
+---
+
+## 📜 Design Philosophy
+The goal is **deliberate friction**. Minecraft's original vision was significantly altered post-Beta 1.8 with the introduction of sprinting and abundant resources, diluting the inherent danger of the world significantly. _Foundations_ uses the **Pareto Principle** to prove that you don't need massive overhauls to fix this: minimal, surgical changes with a strong philosophical basis can restore the survival spirit where every choice carries weight, just like in the Alpha and Beta days.
+
+### 🌀 The Cycle of Survival
+_Foundations_ closes the loop of the Minecraft experience by following the natural flow of the ancient **Wuxing** (The Five Phases) scheme. Every mechanic is interconnected:
+
+1. **Exploration (水 - Water):** You find yourself with few to no resources. To sustain your cycle, you must flow back into the world: braving deep caves and distant lands to acquire new materials.
+2. **Building (木 - Wood):** You modify the world. You settle down, build farms, storage systems, and beds to secure your progress. This is the phase of expansion and decoration.
+3. **Time (火 - Fire):** Construction and routine consume time. As you spend hours perfecting your builds, the "heat" of the world rises. Time is the fuel for what comes next.
+4. **Evolution (土 - Earth):** The environment "hardens". Just like how safe days naturally turn into dangerous nights, as time accumulates, so does the threat. _Dynamic Hostility_ is the world's long-term natural response to your presence.
+5. **Crafting (金 - Metal):** As mobs evolve, your current gear becomes obsolete. You are forced into upgrading your equipment to maintain your footing against the new level of danger, depleting your resources by the costs of combat/repairs and equipment upgrades.
+
+_Foundations_ is not about punishment, but **interdependence**. By making the basics harder, **every choice carries weight**. To master the world, you must _respect its flow_.
+
+---
+
+> ༄ Are you ready to flow with your world? Download Foundations and return to the original Minecraft vision.
+
+---
+
+This project is **not** affiliated with Mojang Studios. However, I am fully open to Mojang implementing any of these concepts into the base game.
 
 _The Minecraft item icons are copyright © 2009-2026 Mojang Studios._
