@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <filter id="paper-texture">
+    <!-- Textura base de papel -->
+    <feTurbulence 
+      type="fractalNoise" 
+      baseFrequency="1.2" 
+      numOctaves="5" 
+      seed="2"
+      stitchTiles="stitch" />
+    
+    <!-- Adiciona mais detalhes finos (fibras do papel) -->
+    <feColorMatrix 
+      type="saturate" 
+      values="0"/>
+    
+    <!-- Controla o contraste da textura - aumentado! -->
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="2.5" intercept="-0.4"/>
+      <feFuncG type="linear" slope="2.5" intercept="-0.4"/>
+      <feFuncB type="linear" slope="2.5" intercept="-0.4"/>
+    </feComponentTransfer>
+    
+    <!-- Suaviza levemente para parecer mais orgânico -->
+    <feGaussianBlur stdDeviation="0.4"/>
+  </filter>
+  
+  <rect width="100%" height="100%" filter="url(#paper-texture)" opacity="0.35" fill="white"/>
+</svg>

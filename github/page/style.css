@@ -1,0 +1,479 @@
+@font-face {
+    font-family: 'Lora';
+    src: url('lora.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", serif;
+    margin: 0;
+    min-height: 100vh;
+    background:
+        url('noise.svg'),
+        radial-gradient(
+            circle at top left,
+            hsla(45, 40%, 98%, 1) 0%,
+            hsla(45, 25%, 95%, 1) 50%,
+            hsla(50, 20%, 92%, 1) 100%
+        );
+    color: #333;
+    position: relative;
+    font-size: 14pt;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 2.5rem;
+    margin-bottom: 170px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+#bamboo {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    width: auto;
+    height: 100vw;
+    transform: rotate(90deg) translateX(-88%);
+    transform-origin: bottom left;
+    left: 0;
+    bottom: 0;
+}
+
+.title {
+    margin-top: 0;
+    font-size: 30pt;
+    color: #222;
+    line-height: 0.8;
+}
+
+.logo {
+    display: block;
+    width: 130px;
+    margin: 3rem 0;
+    animation: stampEffect 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.heading {
+    font-size: 20pt;
+}
+
+.disclaimer {
+    margin-top: 4rem;
+    font-size: 10pt;
+    color: #999;
+    line-height: 1.6;
+    letter-spacing: 0.02rem;
+}
+
+.disclaimer p {
+    margin: 8px 0;
+}
+
+.disclaimer a {
+    color: #888;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.disclaimer a:hover {
+    color: #74a744;
+}
+
+.hanzi {
+    list-style: none; font-size: 18pt; padding-left: 10px;
+}
+
+.hanzi li {
+    padding: 12px 0; display: flex; align-items: center; border-bottom: rgb(0 0 0 / 3%) 1px solid; cursor: pointer; transition: background-color 0.2s;
+}
+
+.hanzi li:last-child {
+    border-bottom: none;
+}
+
+.hanzi li:hover {
+    background-color: rgba(116, 167, 68, 0.05);
+}
+
+.hanzi li img {
+    width: 32pt;
+}
+
+.hanzi li span {
+    opacity: 0; visibility: hidden; transition: all 0.6s ease; white-space: nowrap;
+}
+
+.hanzi li:hover span {
+    opacity: 1; visibility: visible; margin-left: 22px;
+}
+
+ul {
+    list-style-type: square; color: #555;
+}
+
+.disclaimer strong {
+    color: #777;
+}
+
+.download {
+    margin-top: 3.5rem; background-color: #74a744; text-align: center; letter-spacing: 0.15rem; color: white; text-decoration: none; font-weight: bold; padding: 1.25rem 4rem; display: block; transition: background-color 0.2s ease-in-out;}
+
+    .download:hover {
+    background-color: #61923c;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-paper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 96vh;
+    background:
+        url('noise.svg'),
+        radial-gradient(
+            circle at top left,
+            hsla(45, 45%, 94%, 1) 0%,
+            hsla(42, 35%, 88%, 1) 50%,
+            hsla(38, 30%, 82%, 1) 100%
+        );
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+}
+
+.modal-paper.active {
+    transform: translateY(0);
+}
+
+.modal-content {
+    padding: 2.5rem;
+    padding-bottom: 4rem;
+}
+
+.close-btn {
+    font-family: "Lora", serif;
+    font-size: 11pt;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    display: block;
+    transition: color 0.2s;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: -0.25rem;
+}
+
+.close-btn:hover {
+    color: #74a744;
+}
+
+.modal-icon {
+    user-select: none;
+    width: 100px;
+    margin-left: -14px;
+    margin: 0 0 2rem 0;
+    display: block;
+}
+
+.modal-description {
+    line-height: 1.6;
+    color: #444;
+    font-size: 14pt;
+}
+
+.modal-table {
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.modal-table td:first-child {
+    background: #e3d8c0;
+    border-radius: 40px;
+    padding: 12px;
+    text-align: center;
+}
+
+.modal-table td:nth-child(2) {
+    padding: 0 2rem;
+}
+
+.modal-table img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+}
+
+.tweak-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(116, 167, 68, 0.05);
+    border-left: 3px solid #74a744;
+}
+
+.tweak-box ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+}
+
+.metal-plates-stack {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+}
+
+.metal-plate-wrapper {
+    position: absolute;
+    pointer-events: auto;
+    cursor: grab;
+    width: 300px;
+    animation: place 1.2s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+}
+
+.metal-plate-wrapper:active {
+    cursor: grabbing;
+}
+
+.metal-plate {
+    background: url(noise.svg), linear-gradient(135deg, hsl(214 15% 25% / 1) 0%, hsl(218 11% 54% / 1) 20%, hsl(218 14% 44% / 1) 40%, hsl(218 11% 60% / 1) 60%, hsl(210 20% 79% / 1) 80%, hsl(218 11% 60% / 1) 100%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.3);
+    padding: 1.2rem 1.8rem;
+    min-width: 260px;
+    max-width: 320px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, z-index 0.1s;
+}
+
+.metal-plate-wrapper:hover .metal-plate {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.plate-title {
+    font-size: 15pt;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: #ffffffde;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.3), 0 -1px 1px rgba(0,0,0,0.5);
+    letter-spacing: 0.03rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tweaks li:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.plate-stats {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plate-stats th:last-child, .plate-stats td:last-child * {
+    text-align: end;
+}
+
+.plate-stats th:first-child, .plate-stats td:first-child * {
+    text-align: start;
+}
+
+.plate-stats th {
+    font-size: 11pt;
+    font-weight: bolder;
+    color: #efefefe0;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.3), 0 -1px 1px rgba(0,0,0,0.5);
+    padding: 0.3rem 0;
+    cursor: help;
+    text-decoration: underline;
+}
+
+.plate-stats td {
+    font-size: 9pt;
+    color: #efefefd9;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.3), 1px 1px 1px rgba(0,0,0,0.55);
+    padding: 0.4rem 0.3rem;
+    vertical-align: top;
+}
+
+.stat-values {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-value {
+    font-family: monospace;
+    font-size: 10pt;
+}
+
+.stat-value:not(:first-child):hover {
+    cursor: help;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        display: flex; align-items: center; justify-content: flex-start; font-size: 17pt;
+    }
+
+    main {
+        padding-right: 215px; max-width: 1500px; padding: 3rem; padding-right: 20rem; margin-bottom: 0;
+    }
+
+    #bamboo {
+        transform: none;
+        width: auto;
+        height: 100vh;
+        left: auto;
+        bottom: auto;
+        top: 0;
+        right: 0;
+    }
+
+    .title {
+        font-size: 40pt;
+    }
+    
+    .hanzi {
+        margin: 0; font-size: 32pt;
+    }
+    
+    .hanzi li img {
+        width: 44pt;
+    }
+    
+    .hanzi li:hover span {
+        margin-left: 44px;
+    }
+    
+    .heading {
+        font-size: 30pt; margin-bottom: 2rem;
+    }
+    
+    .logo {
+        width: 150px; margin: 2rem 0;
+    }
+    
+    .download {
+        width: fit-content;
+    }
+    
+    .disclaimer {
+        margin-bottom: -1rem;
+    }
+    
+    .modal-paper {
+        left: 4rem;
+        right: 4rem;
+        bottom: 0;
+        height: calc(100vh - 4rem);
+        border-radius: 0;
+
+    }
+    
+    .modal-content {
+        padding: 4rem;
+        padding-bottom: 2rem;
+        max-width: 900px;
+
+    }
+    
+    .modal-icon {
+        width: 140px; margin-left: -16px;
+    }
+    
+    .modal-description {
+        font-size: 17pt;
+    }
+    
+    .metal-plate {
+        min-width: 280px;
+        max-width: 340px;
+        padding: 1.4rem 2rem;
+
+    }
+    
+    .plate-title {
+        font-size: 22pt;
+    }
+    
+    .plate-stats th {
+        font-size: 15pt;
+    }
+    
+    .stat-value {
+        font-size: 13pt;
+    }
+}
+
+@keyframes place {
+    0% {
+        opacity: 0;
+        transform: translate(0, var(--start-y)) scale(1.5) rotate(var(--start-rot));
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(var(--x), var(--y)) scale(1) rotate(var(--rot));
+
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; transform: translateY(10px);
+    }
+    to {
+        opacity: 1; transform: translateY(0);
+    }
+}
+
+@keyframes stampEffect {
+    0% {
+        opacity: 0; transform: scale(1.5) rotate(-10deg); filter: blur(2px);
+    }
+    100% {
+        opacity: 1; transform: scale(1) rotate(-3deg); filter: blur(0);
+    }
+}

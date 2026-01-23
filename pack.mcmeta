@@ -1,16 +1,16 @@
 {
     "pack": {
         "description": [
-			{
-				"text": "Minimal changes with maximum impact.",
-				"color": "gold"
-			},
-			{
-				"text": "\ngithub.com/lluckymou/foundations",
-				"color": "yellow"
-			}
-		],
-        "min_format": 88,
+            {
+                "text": "Minimum changes, maximum impact.",
+                "color": "gold"
+            },
+            {
+                "text": "\ngithub.com/lluckymou/foundations",
+                "color": "yellow"
+            }
+        ],
+        "min_format": 88.0,
         "max_format": 94.1
     }
 }

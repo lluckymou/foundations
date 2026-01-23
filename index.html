@@ -1,14 +1,61 @@
-<strong>Foundations</strong> is a minimalist survival overhaul built to bring <i>deliberate friction</i> back to your playthroughs.
-<br><br>
-Instead of cluttering the game, it <i>surgically</i> reshapes core mechanics to restore weight, danger, and consequence to the world.
-<br>
-<ul>
-    <li>Light is no longer free.</li>
-    <li>Progression demands descent.</li>
-    <li>Time hardens the world.</li>
-</ul>
-Inspired by the Pre-Beta 1.8 era, Foundations applies the Pareto Principle: minimal changes that radically transform how the game is learned, explored, and survived.
-<br><br>
-⚠️ Not for casual builders. Foundations is a slower survival-first experience.
-<br><br>
-DOWNLOAD | CHANGES
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="github/page/5.svg" type="image/svg+xml">
+    <title>Foundations for Minecraft</title>
+    <link rel="stylesheet" href="github/page/style.css">
+</head>
+<body>
+
+    <main>
+        <h1 class="title">
+            Foundations
+            <span style="display: block; font-size: 27%; line-height: 1.9; opacity: 50%; font-weight: 400; letter-spacing: 0.04rem;">
+                for survival Minecraft
+            </span>
+        </h1>
+        <ul class="hanzi">
+            <li data-modal="1"><img src="github/page/1.svg" alt="1"><span>Deepslate Age</span></li>
+            <li data-modal="2"><img src="github/page/2.svg" alt="2"><span>The Price of Light</span></li>
+            <li data-modal="3"><img src="github/page/3.svg" alt="3"><span>Industrial Refinement</span></li>
+            <li data-modal="4"><img src="github/page/4.svg" alt="4"><span>Earned Rest</span></li>
+            <li data-modal="5"><img src="github/page/5.svg" alt="5"><span>Dynamic Hostility</span></li>
+        </ul>
+        <img src="github/page/seal.png" draggable="false" class="logo" alt="Logo" title="Foundations logo" />
+        <section style="letter-spacing: 0.04rem; line-height: 1.4;">
+            <p class="heading"><strong>Foundations</strong> is a minimalist survival overhaul built to bring <i>deliberate friction</i> back to your playthroughs.</p>
+            Instead of cluttering your game, it <i>surgically</i> tweaks core mechanics to restore weight, danger, and consequence to the world:
+            <br>
+            <ul>
+                <li>Light is no longer free.</li>
+                <li>Progression demands descent.</li>
+                <li>Time hardens the world.</li>
+            </ul>
+            Inspired by the pre-Beta 1.8 era, Foundations applies the Pareto Principle: minimal changes that radically transform how the game is learned, explored, and played.
+        </section>
+        <a class="download" href="https://github.com/lluckymou/foundations/releases">DOWNLOAD</a>
+        <footer class="disclaimer">
+            <p>Thoughtfully designed by <a href="https://lluckymou.github.io/">lluckymou</a> 🌱</p>
+            <p>This project is <strong>not</strong> affiliated with Mojang Studios. However, I am fully open to Mojang implementing any of these concepts into the base game with or without credit.</p>
+            <p>The Minecraft item icons in this repository are copyright © 2009-2026 <a style="text-decoration: none;" href="https://mojang.com/">Mojang Studios</a>.</p>
+        </footer>
+    </main>
+
+    <img src="github/page/bamboo.png" id="bamboo" alt="Bamboo Decoration"/>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-paper" id="modalPaper">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">← Close explanation</button>
+            <img class="modal-icon" draggable="false" id="modalIcon" src="" alt="Icon">
+            <div class="modal-description" id="modalDescription"></div>
+        </div>
+    </div>
+
+    <div class="metal-plates-stack" id="metalPlatesStack"></div>
+
+    <script src="github/page/script.js"></script>
+</body>
+</html>
