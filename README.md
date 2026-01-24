@@ -1,24 +1,6 @@
 <a href="https://lluckymou.github.io/foundations/">
-    <img src="github/readme-header.png" alt="README Banner Header" width="100%" />
+    <img src="github/readme-banner.png" alt="README Banner Header" width="100%" />
 </a>
-<a href="#1-deepslate-age">
-    <img src="github/readme-r1.png" alt="README Banner 1" width="100%" />
-</a>
-<a href="#2-the-price-of-light">
-    <img src="github/readme-r2.png" alt="README Banner 2" width="100%" />
-</a>
-<a href="#3-industrial-refinement">
-    <img src="github/readme-r3.png" alt="README Banner 3" width="100%" />
-</a>
-<a href="#4-earned-rest">
-    <img src="github/readme-r4.png" alt="README Banner 4" width="100%" />
-</a>
-<a href="#5-dynamic-hostility">
-    <img src="github/readme-r5.png" alt="README Banner 5" width="100%" />
-</a>
-<picture>
-    <img src="github/readme-footer.png" alt="README Banner Footer" width="100%" />
-</picture>
 
 ### **Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
 
@@ -40,7 +22,7 @@ Stone tools now require <b>Deepslate</b>. This pushes you deeper into the world 
 </td>
 <td width="300">
 
-| Input | | Output |
+| Input |  | Output |
 | :---: | :---: | :---: |
 | <img src="github/examples/stone_tool_materials.gif" width="32"> <img src="github/examples/stone_tool_materials.gif" width="32"> <img src="github/examples/stone_tool_materials.gif" width="32"><br><img src="github/examples/air.png" width="32"> <img src="github/examples/stick.png" width="32"> <img src="github/examples/air.png" width="32"><br><img src="github/examples/air.png" width="32"> <img src="github/examples/stick.png" width="32"> <img src="github/examples/air.png" width="32"> | <img src="github/examples/crafting_arrow.gif" width="32"> | <img src="github/examples/stone_tool.png" width="32"> |
 
@@ -56,7 +38,7 @@ Torches require iron to craft and sticks can create fire. Lighting up spaces per
 </td>
 <td width="300">
 
-| Input | | Output |
+| Input |  | Output |
 | :---: | :---: | :---: |
 | <img src="github/examples/air.png" width="32"> <img src="github/examples/torch_nuggets.gif" width="32"> <img src="github/examples/air.png" width="32"><br><img src="github/examples/air.png" width="32"> <img src="github/examples/coal.gif" width="32"> <img src="github/examples/air.png" width="32"><br><img src="github/examples/air.png" width="32"> <img src="github/examples/stick.png" width="32"> <img src="github/examples/air.png" width="32"> | <img src="github/examples/crafting_arrow.gif" width="32"> | <img src="github/examples/torches.gif" width="32"> |
 
@@ -72,7 +54,7 @@ Standard furnaces yield only <b>nuggets</b> from ores. Smelting full ingots is g
 </td>
 <td width="300">
 
-| Input | | Output |
+| Input |  | Output |
 | :---: | :---: | :---: |
 | <img src="github/examples/air.png" width="32"> <img src="github/examples/raw.gif" width="32"> <img src="github/examples/air.png" width="32"> | <img src="github/examples/furnace_flame.gif" width="32"> | <img src="github/examples/nuggets.gif" width="32"> |
 
@@ -88,7 +70,7 @@ Beds require string and drop wool when broken. Setting a spawn point and skippin
 </td>
 <td width="300">
 
-| Input | | Output |
+| Input |  | Output |
 | :---: | :---: | :---: |
 | <img src="github/examples/string.png" width="32"> <img src="github/examples/string.png" width="32"> <img src="github/examples/string.png" width="32"><br><img src="github/examples/wool.gif" width="32"> <img src="github/examples/wool.gif" width="32"> <img src="github/examples/wool.gif" width="32"><br><img src="github/examples/planks.gif" width="32"> <img src="github/examples/planks.gif" width="32"> <img src="github/examples/planks.gif" width="32"> | <img src="github/examples/crafting_arrow.gif" width="32"> | <img src="github/examples/beds.gif" width="32"> |
 
@@ -99,13 +81,13 @@ Beds require string and drop wool when broken. Setting a spawn point and skippin
 ### 5. Dynamic Hostility
 Hostile mobs are no longer static. They feature randomized RNG attribute changes that scale with your world's age, making every encounter slightly unpredictable and dangerous.
 
-| ‎  | **Day 0+** | **Day 5+** | **Day 10+** | **Day 25+** | **Day 50+** |
+|   | **Day 0+** | **Day 5+** | **Day 10+** | **Day 25+** | **Day 50+** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **🥾 Movement Speed** | `0.3`, `0.325` | `0.3`, `0.325`, `0.35` | `0.3`, `0.325`, `0.35`, `0.4` | `0.3`, `0.325`, `0.35`, `0.4` | `0.3`, `0.325`, `0.35`, `0.4` |
 | **⚔️ Attack Damage** | <img src="github/examples/air.png" width="32"> | `+1` | `+1`, `+3` | `+1`, `+3`, `+5` | `+1`, `+3`, `+5` |
 | **🛡️ Armor Points** | <img src="github/examples/air.png" width="32"> | <img src="github/examples/air.png" width="32"> | `2` | `2`, `5` | `2`, `5`, `8` |
 
-| ‎  | 🧬 Affected Hostiles |
+|   | 🧬 Affected Hostiles |
 | :--- | :--- |
 | **🥾 Movement Speed** | Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes. |
 | **🛡️ Armor Points** | **All Above** + Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins. |
@@ -136,10 +118,4 @@ _Foundations_ is about **interdependence**. By making the basics harder, **every
 
 ---
 
-> ༄ **Stop playing and start surviving:** [Download](https://github.com/lluckymou/foundations/releases)
-
----
-
-This project is **not** affiliated with Mojang Studios. However, I am fully open to Mojang implementing any of these concepts into the base game.
-
-_The Minecraft item icons are copyright © 2009-2026 Mojang Studios._
+> ༄ **Start surviving**: [Download](https://github.com/lluckymou/foundations/releases)
