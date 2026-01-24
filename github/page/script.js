@@ -48,12 +48,18 @@ const hanziItems = document.querySelectorAll('.hanzi li');
 function openModal(id) {
     const data = modalData[id];
     if (!data) return;
+
     modalIcon.src = data.icon;
     modalDescription.innerHTML = data.description;
 
+    const scrollY = window.scrollY;
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
     modalOverlay.classList.add('active');
     modalPaper.classList.add('active');
-    document.body.style.overflow = 'hidden';
 
     if (id === '5' || id === 5) {
         createDraggablePlates();
@@ -61,9 +67,15 @@ function openModal(id) {
 }
 
 function closeModal() {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
     modalOverlay.classList.remove('active');
     modalPaper.classList.remove('active');
-    document.body.style.overflow = '';
     modalPaper.scrollTop = 0;
     document.getElementById('metalPlatesStack').innerHTML = '';
 }
