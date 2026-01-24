@@ -29,6 +29,7 @@ body {
     position: relative;
     font-size: 14pt;
     overflow-x: hidden;
+    overscroll-behavior: contain;
 }
 
 main {
@@ -296,6 +297,9 @@ ul {
     animation: place 1.2s ease-out forwards;
     animation-delay: var(--delay, 0s);
     opacity: 0;
+}
+
+.metal-plate-wrapper.is-dragging {
     touch-action: none;
 }
 

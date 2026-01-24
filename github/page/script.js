@@ -78,6 +78,10 @@ function closeModal() {
     modalPaper.classList.remove('active');
     modalPaper.scrollTop = 0;
     document.getElementById('metalPlatesStack').innerHTML = '';
+    
+    // Remove todos os listeners dos plates
+    activeListeners.forEach(cleanup => cleanup());
+    activeListeners = [];
 }
 
 function renderPlateHTML(board) {
@@ -101,15 +105,21 @@ function renderPlateHTML(board) {
     `;
 }
 
+let activeListeners = [];
+
 function createDraggablePlates() {
     const stack = document.getElementById('metalPlatesStack');
     stack.innerHTML = '';
+    
+    // Limpa listeners anteriores
+    activeListeners.forEach(cleanup => cleanup());
+    activeListeners = [];
 
     const isMobile = window.innerWidth < 900;
 
     if (isMobile) {
         stack.style.top = 'auto';
-        stack.style.bottom = '16rem';
+        stack.style.bottom = '8rem';
         stack.style.left = '3rem';
         stack.style.right = 'auto';
     } else {
@@ -121,8 +131,6 @@ function createDraggablePlates() {
     }
 
     let currentTopZ = 1000;
-
-    const removeListeners = [];
 
     boardsData.forEach((board, i) => {
         const wrapper = document.createElement('div');
@@ -154,9 +162,38 @@ function createDraggablePlates() {
         let startTranslateX = 0;
         let startTranslateY = 0;
 
-        const startDrag = (clientX, clientY) => { /* ... igual ao seu ... */ };
-        const moveDrag  = (clientX, clientY) => { /* ... igual ... */ };
-        const endDrag   = () => { /* ... igual ... */ };
+        const startDrag = (clientX, clientY) => {
+            isDragging = true;
+
+            startX = clientX;
+            startY = clientY;
+
+            const computed = window.getComputedStyle(wrapper);
+            const matrix = new DOMMatrix(computed.transform);
+            startTranslateX = matrix.e || 0;
+            startTranslateY = matrix.f || 0;
+
+            wrapper.style.opacity = '1';
+            wrapper.style.animation = 'none';
+            wrapper.style.transition = 'transform 0.1s ease-out';
+            wrapper.style.transform = `translate(${startTranslateX}px, ${startTranslateY}px) rotate(0deg) scale(1)`;
+
+            currentTopZ += 10;
+            wrapper.style.zIndex = currentTopZ;
+        };
+
+        const moveDrag = (clientX, clientY) => {
+            if (!isDragging) return;
+            const dx = clientX - startX;
+            const dy = clientY - startY;
+            wrapper.style.transform = `translate(${startTranslateX + dx}px, ${startTranslateY + dy}px) rotate(0deg) scale(1)`;
+        };
+
+        const endDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            wrapper.style.transition = 'transform 0.18s ease';
+        };
 
         wrapper.addEventListener('mousedown', e => {
             if (e.button !== 0) return;
@@ -170,44 +207,51 @@ function createDraggablePlates() {
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
 
+        // Touch handlers que serão adicionados dinamicamente
+        let activeTouchMove = null;
+        let activeTouchEnd = null;
+
         wrapper.addEventListener('touchstart', e => {
             if (e.touches.length !== 1) return;
             e.preventDefault();
             startDrag(e.touches[0].clientX, e.touches[0].clientY);
+            
+            // Cria e adiciona listeners SOMENTE quando começar a arrastar
+            activeTouchMove = (moveEvent) => {
+                if (moveEvent.touches.length !== 1) return;
+                moveEvent.preventDefault();
+                moveDrag(moveEvent.touches[0].clientX, moveEvent.touches[0].clientY);
+            };
+            
+            activeTouchEnd = () => {
+                endDrag();
+                // Remove listeners imediatamente quando soltar
+                if (activeTouchMove) {
+                    document.removeEventListener('touchmove', activeTouchMove);
+                    document.removeEventListener('touchend', activeTouchEnd);
+                    document.removeEventListener('touchcancel', activeTouchEnd);
+                    activeTouchMove = null;
+                    activeTouchEnd = null;
+                }
+            };
+            
+            document.addEventListener('touchmove', activeTouchMove, { passive: false });
+            document.addEventListener('touchend', activeTouchEnd);
+            document.addEventListener('touchcancel', activeTouchEnd);
         }, { passive: false });
 
-        const onTouchMove = e => {
-            if (e.touches.length !== 1) return;
-            e.preventDefault();
-            moveDrag(e.touches[0].clientX, e.touches[0].clientY);
-        };
-
-        const onTouchEnd = () => endDrag();
-
-        document.addEventListener('touchmove', onTouchMove, { passive: false });
-        document.addEventListener('touchend', onTouchEnd);
-        document.addEventListener('touchcancel', onTouchEnd);
-
-        removeListeners.push(() => {
+        // Adiciona função de cleanup para este plate
+        activeListeners.push(() => {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
-            document.removeEventListener('touchmove', onTouchMove);
-            document.removeEventListener('touchend', onTouchEnd);
-            document.removeEventListener('touchcancel', onTouchEnd);
+            // Remove touch listeners se ainda estiverem ativos
+            if (activeTouchMove) {
+                document.removeEventListener('touchmove', activeTouchMove);
+                document.removeEventListener('touchend', activeTouchEnd);
+                document.removeEventListener('touchcancel', activeTouchEnd);
+            }
         });
     });
-
-    const originalClose = closeModal;
-    closeModal = function () {
-        removeListeners.forEach(removeFn => removeFn());
-        const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-
-        originalClose();
-    };
 }
 
 hanziItems.forEach(item => {
