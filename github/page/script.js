@@ -114,7 +114,6 @@ function createDraggablePlates() {
         const wrapper = document.createElement('div');
         wrapper.className = 'metal-plate-wrapper';
         wrapper.style.position = 'absolute';
-
         wrapper.style.zIndex = 1000 + (boardsData.length - 1 - i);
 
         const plate = document.createElement('div');
@@ -136,17 +135,16 @@ function createDraggablePlates() {
         wrapper.style.setProperty('--delay', `${(boardsData.length - 1 - i) * 0.3}s`);
 
         let isDragging = false;
-        let startMouseX, startMouseY;
+        let startX = 0;
+        let startY = 0;
         let startTranslateX = 0;
         let startTranslateY = 0;
 
-        wrapper.addEventListener('mousedown', e => {
-            if (e.button !== 0) return;
-            e.preventDefault();
+        const startDrag = (clientX, clientY) => {
             isDragging = true;
 
-            startMouseX = e.clientX;
-            startMouseY = e.clientY;
+            startX = clientX;
+            startY = clientY;
 
             const computed = window.getComputedStyle(wrapper);
             const matrix = new DOMMatrix(computed.transform);
@@ -154,35 +152,66 @@ function createDraggablePlates() {
             startTranslateY = matrix.f || 0;
 
             wrapper.style.opacity = '1';
-
             wrapper.style.animation = 'none';
             wrapper.style.transition = 'transform 0.1s ease-out';
             wrapper.style.transform = `translate(${startTranslateX}px, ${startTranslateY}px) rotate(0deg) scale(1)`;
 
             currentTopZ += 10;
             wrapper.style.zIndex = currentTopZ;
-        });
+        };
 
-        const onMove = e => {
+        const moveDrag = (clientX, clientY) => {
             if (!isDragging) return;
-            const dx = e.clientX - startMouseX;
-            const dy = e.clientY - startMouseY;
+            const dx = clientX - startX;
+            const dy = clientY - startY;
             wrapper.style.transform = `translate(${startTranslateX + dx}px, ${startTranslateY + dy}px) rotate(0deg) scale(1)`;
         };
 
-        const onUp = () => {
+        const endDrag = () => {
             if (!isDragging) return;
             isDragging = false;
             wrapper.style.transition = 'transform 0.18s ease';
         };
 
-        document.addEventListener('mousemove', onMove);
-        document.addEventListener('mouseup', onUp);
+        wrapper.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            e.preventDefault();
+            startDrag(e.clientX, e.clientY);
+        });
+
+        const onMouseMove = e => moveDrag(e.clientX, e.clientY);
+        const onMouseUp = () => endDrag();
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+
+        wrapper.addEventListener('touchstart', e => {
+            if (e.touches.length !== 1) return;
+            e.preventDefault();
+            startDrag(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: false });
+
+        const onTouchMove = e => {
+            if (e.touches.length !== 1) return;
+            e.preventDefault();
+            moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+        };
+
+        const onTouchEnd = e => {
+            endDrag();
+        };
+
+        document.addEventListener('touchmove', onTouchMove, { passive: false });
+        document.addEventListener('touchend', onTouchEnd);
+        document.addEventListener('touchcancel', onTouchEnd);
 
         const origClose = closeModal;
-        closeModal = function() {
-            document.removeEventListener('mousemove', onMove);
-            document.removeEventListener('mouseup', onUp);
+        closeModal = function () {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('touchmove', onTouchMove);
+            document.removeEventListener('touchend', onTouchEnd);
+            document.removeEventListener('touchcancel', onTouchEnd);
             origClose();
         };
     });
@@ -202,3 +231,10 @@ modalPaper.addEventListener('click', e => e.stopPropagation());
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
+
+function updateVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--real-vh', `${vh}px`);
+}
+window.addEventListener('resize', updateVH);
+updateVH();
