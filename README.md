@@ -1,6 +1,6 @@
-# Foundations for Minecraft <img src="pack.png" align="right">
+<img src="github/README-0.png" alt="README Banner 0" width="100%" /><a href="https://lluckymou.github.io/foundations/"><img src="github/README-1.png" alt="README Banner 1" width="100%" /></a><img src="github/README-2.png" alt="README Banner 2" width="100%" /><a href="#deepslate-age"><img src="github/README-3.png" alt="README Banner 3" width="100%" /></a><a href="#price-of-light"><img src="github/README-4.png" alt="README Banner 4" width="100%" /></a><a href="#industrial-refinement"><img src="github/README-5.png" alt="README Banner 5" width="100%" /></a><a href="#earned-rest"><img src="github/README-6.png" alt="README Banner 6" width="100%" /></a><a href="#dynamic-hostility"><img src="github/README-7.png" alt="README Banner 7" width="100%" /></a><img src="github/README-8.png" alt="README Banner 8" width="100%" /><a href="https://github.com/lluckymou"><img src="github/README-9.png" alt="README Banner 9" width="100%" /></a><img src="github/README-10.png" alt="README Banner 10" width="100%" />
 
-**Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
+### **Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
 
 *Foundations* is an ultra-minimalist progression datapack designed under the _Pareto Principle_: applying **minimal changes** to transform 80% of the gameplay experience.
 
@@ -94,7 +94,7 @@ Hostile mobs are no longer static. They feature randomized RNG attribute changes
 ---
 
 ### 🛠️ Balancing Tweaks
-* **Primitive Lighting**: Right-clicking blocks with sticks can create fire.
+* **Primitive Lighting**: Right-clicking most blocks with sticks can create fire.
 * **No Free Lunch:** Campfires are crafted unlit.
 * **Easier Retrieval:** Items dropped upon a player's death emit a **glowing outline** when nearby.
 
