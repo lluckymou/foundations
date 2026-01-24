@@ -1,4 +1,4 @@
-# Foundations <img src="pack.png" align="right" width="100">
+# Foundations for Minecraft <img src="pack.png" align="right">
 
 **Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
 

@@ -1,0 +1,12 @@
+{
+  "function": "minecraft:set_components",
+  "components": {
+    "minecraft:rarity": "uncommon",
+    "minecraft:consumable": {
+      "animation": "drink",
+      "consume_seconds": 1,
+      "has_consume_particles": false,
+      "sound": "minecraft:item.spear_wood.attack"
+    }
+  }
+}
