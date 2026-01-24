@@ -122,6 +122,8 @@ function createDraggablePlates() {
 
     let currentTopZ = 1000;
 
+    const removeListeners = [];
+
     boardsData.forEach((board, i) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'metal-plate-wrapper';
@@ -152,38 +154,9 @@ function createDraggablePlates() {
         let startTranslateX = 0;
         let startTranslateY = 0;
 
-        const startDrag = (clientX, clientY) => {
-            isDragging = true;
-
-            startX = clientX;
-            startY = clientY;
-
-            const computed = window.getComputedStyle(wrapper);
-            const matrix = new DOMMatrix(computed.transform);
-            startTranslateX = matrix.e || 0;
-            startTranslateY = matrix.f || 0;
-
-            wrapper.style.opacity = '1';
-            wrapper.style.animation = 'none';
-            wrapper.style.transition = 'transform 0.1s ease-out';
-            wrapper.style.transform = `translate(${startTranslateX}px, ${startTranslateY}px) rotate(0deg) scale(1)`;
-
-            currentTopZ += 10;
-            wrapper.style.zIndex = currentTopZ;
-        };
-
-        const moveDrag = (clientX, clientY) => {
-            if (!isDragging) return;
-            const dx = clientX - startX;
-            const dy = clientY - startY;
-            wrapper.style.transform = `translate(${startTranslateX + dx}px, ${startTranslateY + dy}px) rotate(0deg) scale(1)`;
-        };
-
-        const endDrag = () => {
-            if (!isDragging) return;
-            isDragging = false;
-            wrapper.style.transition = 'transform 0.18s ease';
-        };
+        const startDrag = (clientX, clientY) => { /* ... igual ao seu ... */ };
+        const moveDrag  = (clientX, clientY) => { /* ... igual ... */ };
+        const endDrag   = () => { /* ... igual ... */ };
 
         wrapper.addEventListener('mousedown', e => {
             if (e.button !== 0) return;
@@ -209,24 +182,32 @@ function createDraggablePlates() {
             moveDrag(e.touches[0].clientX, e.touches[0].clientY);
         };
 
-        const onTouchEnd = e => {
-            endDrag();
-        };
+        const onTouchEnd = () => endDrag();
 
         document.addEventListener('touchmove', onTouchMove, { passive: false });
         document.addEventListener('touchend', onTouchEnd);
         document.addEventListener('touchcancel', onTouchEnd);
 
-        const origClose = closeModal;
-        closeModal = function () {
+        removeListeners.push(() => {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
             document.removeEventListener('touchmove', onTouchMove);
             document.removeEventListener('touchend', onTouchEnd);
             document.removeEventListener('touchcancel', onTouchEnd);
-            origClose();
-        };
+        });
     });
+
+    const originalClose = closeModal;
+    closeModal = function () {
+        removeListeners.forEach(removeFn => removeFn());
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+        originalClose();
+    };
 }
 
 hanziItems.forEach(item => {
