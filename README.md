@@ -1,4 +1,24 @@
-<img src="github/README-0.png" alt="README Banner 0" width="100%" /><a href="https://lluckymou.github.io/foundations/"><img src="github/README-1.png" alt="README Banner 1" width="100%" /></a><img src="github/README-2.png" alt="README Banner 2" width="100%" /><a href="#deepslate-age"><img src="github/README-3.png" alt="README Banner 3" width="100%" /></a><a href="#price-of-light"><img src="github/README-4.png" alt="README Banner 4" width="100%" /></a><a href="#industrial-refinement"><img src="github/README-5.png" alt="README Banner 5" width="100%" /></a><a href="#earned-rest"><img src="github/README-6.png" alt="README Banner 6" width="100%" /></a><a href="#dynamic-hostility"><img src="github/README-7.png" alt="README Banner 7" width="100%" /></a><img src="github/README-8.png" alt="README Banner 8" width="100%" /><a href="https://github.com/lluckymou"><img src="github/README-9.png" alt="README Banner 9" width="100%" /></a><img src="github/README-10.png" alt="README Banner 10" width="100%" />
+<a href="https://lluckymou.github.io/foundations/">
+    <img src="github/readme-header.png" alt="README Banner Header" width="100%" />
+</a>
+<a href="#1-deepslate-age">
+    <img src="github/readme-r1.png" alt="README Banner 1" width="100%" />
+</a>
+<a href="#2-the-price-of-light">
+    <img src="github/readme-r2.png" alt="README Banner 2" width="100%" />
+</a>
+<a href="#3-industrial-refinement">
+    <img src="github/readme-r3.png" alt="README Banner 3" width="100%" />
+</a>
+<a href="#4-earned-rest">
+    <img src="github/readme-r4.png" alt="README Banner 4" width="100%" />
+</a>
+<a href="#5-dynamic-hostility">
+    <img src="github/readme-r5.png" alt="README Banner 5" width="100%" />
+</a>
+<picture>
+    <img src="github/readme-footer.png" alt="README Banner Footer" width="100%" />
+</picture>
 
 ### **Maximum impact** through **radical simplicity.** *The "foundation" for your future playthrough.*
 
