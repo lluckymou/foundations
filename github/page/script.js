@@ -3,11 +3,43 @@ const armorMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Sil
 const attackMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins, Phantoms";
 
 const boardsData = [
-    { day: 0,   stats: [{ name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325"] }] },
-    { day: 5,   stats: [{ name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35"] }, { name: "Attack", tooltip: attackMobs, values: ["+1"] }] },
-    { day: 10,  stats: [{ name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4"] }, { name: "Attack", tooltip: attackMobs, values: ["+1", "+3"] }, { name: "Armor", tooltip: armorMobs, values: ["2"] }] },
-    { day: 25,  stats: [{ name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4"] }, { name: "Attack", tooltip: attackMobs, values: ["+1", "+3", "+5"] }, { name: "Armor", tooltip: armorMobs, values: ["2", "5"] }] },
-    { day: 50,  stats: [{ name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4"] }, { name: "Attack", tooltip: attackMobs, values: ["+1", "+3", "+5"] }, { name: "Armor", tooltip: armorMobs, values: ["2", "5", "8"] }] }
+    {
+        day: 0,
+        stats: [
+            { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325"] }
+        ]
+    },
+    {
+        day: 5,
+        stats: [
+            { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35"] },
+            { name: "Attack", tooltip: attackMobs, values: ["+1", "+2", "+3"] }
+        ]
+    },
+    {
+        day: 10,
+        stats: [
+            { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4"] },
+            { name: "Attack", tooltip: attackMobs, values: ["+3", "+4", "+5"] },
+            { name: "Armor", tooltip: armorMobs, values: ["+1", "+2", "+3"] }
+        ]
+    },
+    {
+        day: 25,
+        stats: [
+            { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4", "0.425"] },
+            { name: "Attack", tooltip: attackMobs, values: ["+5", "+6", "+7"] },
+            { name: "Armor", tooltip: armorMobs, values: ["+3", "+4", "+5"] }
+        ]
+    },
+    {
+        day: 50,
+        stats: [
+            { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4", "0.425", "0.45"] },
+            { name: "Attack", tooltip: attackMobs, values: ["+7", "+8", "+9", "+10"] },
+            { name: "Armor", tooltip: armorMobs, values: ["+6", "+7", "+8"] }
+        ]
+    }
 ];
 
 const modalData = {
@@ -34,7 +66,7 @@ const modalData = {
     5: {
         icon: 'github/page/5.svg',
         title: 'Dynamic Hostility',
-        description: `<h2 style="margin-top: 0;">Dynamic Hostility</h2><p>Hostile mobs are no longer static. They feature randomized RNG attribute changes that scale with your world's age, making every encounter slightly unpredictable and dangerous.</p><div class="tweak-box"><strong>Balancing Tweak:</strong></div><ul class="tweaks"><li><strong>Easier Retrieval:</strong> Items dropped upon a player's death emit a glowing outline when nearby.</li></ul>`
+        description: `<h2 style="margin-top: 0;">Dynamic Hostility</h2><p>Hostile mobs are no longer static. They feature randomized RNG attribute changes that scale with your world's age, making every encounter slightly unpredictable and dangerous.</p><div class="tweak-box"><strong>Balancing Tweak:</strong></div><ul class="tweaks"><li><strong>Mercy:</strong> Items dropped upon a player's death emit a glowing outline when nearby.</li></ul>`
     },
     6: {
         icon: 'github/page/de.svg',
