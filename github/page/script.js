@@ -35,6 +35,59 @@ const modalData = {
         icon: 'github/page/5.svg',
         title: 'Dynamic Hostility',
         description: `<h2 style="margin-top: 0;">Dynamic Hostility</h2><p>Hostile mobs are no longer static. They feature randomized RNG attribute changes that scale with your world's age, making every encounter slightly unpredictable and dangerous.</p><div class="tweak-box"><strong>Balancing Tweak:</strong></div><ul class="tweaks"><li><strong>Easier Retrieval:</strong> Items dropped upon a player's death emit a glowing outline when nearby.</li></ul>`
+    },
+    6: {
+        icon: 'github/page/de.svg',
+        title: 'Guide',
+        description: `<h2 style="margin-top: 0;">Guide</h2>
+            <p>Foundations brings back the raw survival tension of early Minecraft. This isn't a step-by-step tutorial but practical tips to help you survive and thrive without losing the discovery. Play at least on Normal difficulty for the real experience.</p>
+
+            <h3>Day 1: Scavenge & Shelter</h3>
+            <p>Your first night is brutal: no cheap torches, no easy stone. Focus on basics and smart movement.</p>
+            <ul>
+                <li><strong>Punch trees immediately</strong>: Get ~64 logs to craft sticks (your emergency light source) and wooden tools.</li>
+                <li><strong>Explore while foraging</strong>: Hunt animals for food and leather. Cows = quick helmet. Prioritize surface structures: ruined portals, shipwrecks, villages.</li>
+                <li><strong>Use sticks for quick light</strong>: Hold right-click on most blocks to start fires (66% chance). Explore shallow caves/ravines safely.</li>
+                <li><strong>Shelter fast</strong>: Dirt hut or hill carve-out. Place furnace inside for warmth and dim light (you can convert some of your wood to charcoal and burn cobblestone for example). Seal the entrance.</li>
+                <li><strong>Night strategy</strong>: Stay inside and listen for spiders as they're your source of strings (and sleep).</li>
+                <li>3 strings + wool = bed. Sleep to skip dangerous nights. But remember, oversleeping without gearing up may make your world unnecessarily difficult.</li>
+            </ul>
+
+            <h3>Early Power Moves: Villages & Structures</h3>
+            <p>Exploration pays off huge in the first days.</p>
+            <ul>
+                <li><strong>Villages</strong>: Free beds, crops, iron golems (fast torches). Blast furnaces skip nugget grind hell. Settle nearby for safety.</li>
+                <li><strong>Shipwrecks / Mineshafts</strong>: Chests often have nuggets, coal, or even iron tools.</li>
+            </ul>
+
+            <h3>Progression Milestones</h3>
+            <ul>
+                <li><strong>Days 0-5</strong>: From wooden to iron tools/sword, 20+ torches, bed, basic furnace running.</li>
+                <li><strong>Days 5-10</strong>: Full iron armor, shield, and blast furnace.</li>
+                <li><strong>Days 10-25</strong>: Diamond tools/sword, enchanting setup, deep cave runs.</li>
+                <li><strong>Days 25-50+</strong>: Netherite upgrades, beacons, potions - mobs are at peak threat.</li>
+            </ul>
+
+            <h3>Combat Shift: Shields Become Essential (Day 5+)</h3>
+            <p>Mobs get faster, hit harder, and tank more as days pass. Spam-clicking won't cut it anymore.</p>
+            <ul>
+                <li><strong>Early days (0-5)</strong>: Kite with distance. Use pillars and terrain against groups.</li>
+                <li><strong>Day 5 onward: Shield meta</strong>
+                    <ul>
+                        <li>Right-click to block almost all melee damage.</li>
+                        <li>1v1: Block - hit - backpedal.</li>
+                        <li>Groups: Funnel enemies into tight spaces and block the front one.</li>
+                    </ul>
+                </li>
+                <li><strong>Late game</strong>: Sharpness, Protection enchants + potions turn swarms manageable (but you have to earn it).</li>
+            </ul>
+
+            <h3>Final Mindset Tips</h3>
+            <ul>
+                <li>Dread is intentional: the first real torch or safe house hits different.</li>
+                <li>Death isn't the end: glowing items on ground help recovery.</li>
+            </ul>
+            <p>Build your legend one earned night at a time. Good luck out there!</p>`
     }
 };
 
@@ -79,7 +132,6 @@ function closeModal() {
     modalPaper.scrollTop = 0;
     document.getElementById('metalPlatesStack').innerHTML = '';
     
-    // Remove todos os listeners dos plates
     activeListeners.forEach(cleanup => cleanup());
     activeListeners = [];
 }
@@ -111,7 +163,6 @@ function createDraggablePlates() {
     const stack = document.getElementById('metalPlatesStack');
     stack.innerHTML = '';
     
-    // Limpa listeners anteriores
     activeListeners.forEach(cleanup => cleanup());
     activeListeners = [];
 
@@ -168,6 +219,8 @@ function createDraggablePlates() {
             startX = clientX;
             startY = clientY;
 
+            wrapper.classList.add('is-dragging');
+
             const computed = window.getComputedStyle(wrapper);
             const matrix = new DOMMatrix(computed.transform);
             startTranslateX = matrix.e || 0;
@@ -192,6 +245,9 @@ function createDraggablePlates() {
         const endDrag = () => {
             if (!isDragging) return;
             isDragging = false;
+
+            wrapper.classList.remove('is-dragging');
+
             wrapper.style.transition = 'transform 0.18s ease';
         };
 
@@ -207,7 +263,6 @@ function createDraggablePlates() {
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
 
-        // Touch handlers que serão adicionados dinamicamente
         let activeTouchMove = null;
         let activeTouchEnd = null;
 
@@ -216,7 +271,6 @@ function createDraggablePlates() {
             e.preventDefault();
             startDrag(e.touches[0].clientX, e.touches[0].clientY);
             
-            // Cria e adiciona listeners SOMENTE quando começar a arrastar
             activeTouchMove = (moveEvent) => {
                 if (moveEvent.touches.length !== 1) return;
                 moveEvent.preventDefault();
@@ -225,7 +279,6 @@ function createDraggablePlates() {
             
             activeTouchEnd = () => {
                 endDrag();
-                // Remove listeners imediatamente quando soltar
                 if (activeTouchMove) {
                     document.removeEventListener('touchmove', activeTouchMove);
                     document.removeEventListener('touchend', activeTouchEnd);
@@ -240,11 +293,10 @@ function createDraggablePlates() {
             document.addEventListener('touchcancel', activeTouchEnd);
         }, { passive: false });
 
-        // Adiciona função de cleanup para este plate
         activeListeners.push(() => {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
-            // Remove touch listeners se ainda estiverem ativos
+
             if (activeTouchMove) {
                 document.removeEventListener('touchmove', activeTouchMove);
                 document.removeEventListener('touchend', activeTouchEnd);
@@ -259,6 +311,33 @@ hanziItems.forEach(item => {
         const modalId = item.getAttribute('data-modal');
         openModal(modalId);
     });
+
+    let startX = 0;
+    let isSwiping = false;
+
+    item.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        isSwiping = false;
+    }, { passive: true });
+
+    item.addEventListener('touchmove', e => {
+        const currentX = e.touches[0].clientX;
+        const diff = currentX - startX;
+
+        if (diff > 30) { 
+            isSwiping = true;
+            item.classList.add('is-swiped');
+            
+            hanziItems.forEach(otherItem => {
+                if (otherItem !== item) otherItem.classList.remove('is-swiped');
+            });
+        }
+
+        if (diff < -30) {
+            isSwiping = true;
+            item.classList.remove('is-swiped');
+        }
+    }, { passive: true });
 });
 
 closeBtn.addEventListener('click', closeModal);
