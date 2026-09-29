@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:filtered",
+  "item_filter": {
+    "items": "minecraft:stick",
+    "predicates": {
+      "minecraft:consumable": {}
+    }
+  },
+  "on_pass": {
+    "type": "minecraft:set_components",
+    "components": {
+      "!minecraft:consumable": {},
+      "!minecraft:rarity": {}
+    }
+  }
+}

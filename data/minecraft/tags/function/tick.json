@@ -1,7 +1,6 @@
 {
   "values": [
     "foundations:dynamic_difficulty",
-    "foundations:fire_plough",
     "foundations:death_items"
   ]
 }

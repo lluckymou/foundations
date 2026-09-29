@@ -13,9 +13,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:soul_campfire",
-    "components": {
-      "minecraft:block_state": { "lit": "false" }
-    }
+    "id": "minecraft:soul_campfire"
   }
 }

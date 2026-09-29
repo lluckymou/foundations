@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -10,9 +10,8 @@
             {
               "type": "minecraft:item",
               "name": "minecraft:magenta_bed",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
+              "condition": {
+                  "type": "minecraft:match_tool",
                   "predicate": {
                     "predicates": {
                       "minecraft:enchantments": [
@@ -24,35 +23,28 @@
                     }
                   }
                 }
-              ]
             },
             {
               "type": "minecraft:item",
               "name": "minecraft:magenta_wool",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
+              "condition": {
+                  "type": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "type": "minecraft:player"
+                    "minecraft:type_specific/player": {}
                   }
-                }
-              ],
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
+                },
+              "modifier": {
+                  "type": "minecraft:set_count",
                   "count": 3
                 }
-              ]
             }
           ]
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
+      "condition": {
+          "type": "minecraft:survives_explosion"
         }
-      ]
     }
   ]
 }
