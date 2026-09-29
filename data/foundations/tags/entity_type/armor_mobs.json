@@ -1,6 +1,7 @@
 {
   "values": [
     "#foundations:speed_mobs",
+    "minecraft:creeper",
     "minecraft:evoker",
     "minecraft:vindicator",
     "minecraft:pillager",
