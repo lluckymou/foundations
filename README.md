@@ -44,7 +44,9 @@ Instead of cluttering the game with hundreds of new items, *Foundations* recalib
 **Beds require String and drop Wool when broken.** Setting a spawn point is now an investment, not a convenience you can easily relocate every night.
 
 ### 五 Dynamic Hostility
-**Hostile mobs feature randomized RNG attributes.** Attributes scale with your world's age, making every encounter unpredictable. 
+**Hostile mobs feature randomized RNG attributes.** Attributes scale with nearby players' active playtime and advancement progress, making every encounter unpredictable without punishing players just because a server has been running.
+* *Progression Gates:* 5 days of playtime + the **Stone Pickaxe advancement**, 10 days + the **Diamond advancement**, 25 days + the **Diamond Armour advancement**, and 50 days + the **Entering the End advancement** gate the four hostility tiers.
+* *Speedrunner Skips:* The **Diamond Armour**, **Entering the End**, **Summoning the Wither**, and **Full Netherite Armour** advancements can unlock tiers early.
 * *Mercy:* Items dropped upon death emit a **glowing outline** when you are nearby.
 
 ---

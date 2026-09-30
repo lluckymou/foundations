@@ -316,6 +316,10 @@ ul {
     border-left: 3px solid #74a744;
 }
 
+.tweak-box + .tweak-box {
+    margin-top: 0.75rem;
+}
+
 .tweak-box ul {
     margin: 0.5rem 0 0 0;
     padding-left: 1.5rem;

@@ -1,23 +1,23 @@
-const speedMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes";
+const speedMobs = "Zombies, Skeletons, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes";
 const armorMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins";
-const attackMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins, Phantoms";
+const attackMobs = "Zombies, Skeletons, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins, Phantoms";
 
 const boardsData = [
     {
-        day: 0,
+        label: "Tier 0",
         stats: [
             { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325"] }
         ]
     },
     {
-        day: 5,
+        label: "Tier 1",
         stats: [
             { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35"] },
             { name: "Attack", tooltip: attackMobs, values: ["+1", "+2", "+3"] }
         ]
     },
     {
-        day: 10,
+        label: "Tier 2",
         stats: [
             { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4"] },
             { name: "Attack", tooltip: attackMobs, values: ["+3", "+4", "+5"] },
@@ -25,7 +25,7 @@ const boardsData = [
         ]
     },
     {
-        day: 25,
+        label: "Tier 3",
         stats: [
             { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4", "0.425"] },
             { name: "Attack", tooltip: attackMobs, values: ["+5", "+6", "+7"] },
@@ -33,7 +33,7 @@ const boardsData = [
         ]
     },
     {
-        day: 50,
+        label: "Tier 4",
         stats: [
             { name: "Speed", tooltip: speedMobs, values: ["0.3", "0.325", "0.35", "0.4", "0.425", "0.45"] },
             { name: "Attack", tooltip: attackMobs, values: ["+7", "+8", "+9", "+10"] },
@@ -61,12 +61,12 @@ const modalData = {
     4: {
         icon: 'github/page/4.svg',
         title: 'Earned Rest',
-        description: `<h2 style="margin-top: 0;">Earned Rest</h2><p>Beds require string and drop wool when broken. Setting a spawn point and skipping nights and combat becomes an investment, not a convenience you can mindlessly relocate.</p><table class="modal-table"><tr><td><img src="github/examples/string.png"> <img src="github/examples/string.png"> <img src="github/examples/string.png"><br><img src="github/examples/wool.gif"> <img src="github/examples/wool.gif"> <img src="github/examples/wool.gif"><br><img src="github/examples/planks.gif"> <img src="github/examples/planks.gif"> <img src="github/examples/planks.gif"></td><td><img src="github/examples/crafting_arrow.gif"></td><td><img src="github/examples/beds.gif"></td></tr></table>`
+        description: `<h2 style="margin-top: 0;">Earned Rest</h2><p>Beds require string and drop wool when broken. Setting a spawn point and skipping nights and combat becomes an investment, rather than a convenience you can mindlessly relocate.</p><table class="modal-table"><tr><td><img src="github/examples/string.png"> <img src="github/examples/string.png"> <img src="github/examples/string.png"><br><img src="github/examples/wool.gif"> <img src="github/examples/wool.gif"> <img src="github/examples/wool.gif"><br><img src="github/examples/planks.gif"> <img src="github/examples/planks.gif"> <img src="github/examples/planks.gif"></td><td><img src="github/examples/crafting_arrow.gif"></td><td><img src="github/examples/beds.gif"></td></tr></table>`
     },
     5: {
         icon: 'github/page/5.svg',
         title: 'Dynamic Hostility',
-        description: `<h2 style="margin-top: 0;">Dynamic Hostility</h2><p>Hostile mobs are no longer static. They feature randomized RNG attribute changes that scale with your world's age, making every encounter slightly unpredictable and dangerous.</p><div class="tweak-box"><strong>Balancing Tweak:</strong></div><ul class="tweaks"><li><strong>Mercy:</strong> Items dropped upon a player's death emit a glowing outline when nearby.</li></ul>`
+        description: `<h2 style="margin-top: 0;">Dynamic Hostility</h2><p>Hostile mobs are no longer static. Their randomized attributes scale with the active playtime and advancement progress of nearby players. Each mob locks its tier when first encountered.</p><div class="tweak-box"><strong>Tier 1</strong><br><small><strong>Unlocks at:</strong> 5 days of playtime + Stone Pickaxe advancement<br><strong>Early unlock:</strong> Diamond Armour advancement</small></div><div class="tweak-box"><strong>Tier 2</strong><br><small><strong>Unlocks at:</strong> 10 days of playtime + Diamond advancement<br><strong>Early unlock:</strong> Entering the End advancement</small></div><div class="tweak-box"><strong>Tier 3</strong><br><small><strong>Unlocks at:</strong> 25 days of playtime + Diamond Armour advancement<br><strong>Early unlock:</strong> Summoning the Wither advancement</small></div><div class="tweak-box"><strong>Tier 4</strong><br><small><strong>Unlocks at:</strong> 50 days of playtime + Entering the End advancement<br><strong>Early unlock:</strong> Full Netherite Armour advancement</small></div><ul class="tweaks"><li><strong>Mercy:</strong> Items dropped upon a player's death emit a glowing outline when nearby.</li></ul>`
     },
     6: {
         icon: 'github/page/de.svg',
@@ -77,10 +77,9 @@ const modalData = {
             <h3>Day 1: Scavenge & Shelter</h3>
             <p>Your first night is brutal: no cheap torches, no easy stone. Focus on basics and smart movement.</p>
             <ul>
-                <li><strong>Punch trees immediately</strong>: Get ~64 logs to craft sticks (your emergency light source) and wooden tools.</li>
                 <li><strong>Explore while foraging</strong>: Hunt animals for food and leather. Cows = quick helmet. Prioritize surface structures: ruined portals, shipwrecks, villages.</li>
-                <li><strong>Use sticks for quick light</strong>: Hold right-click on most blocks to start fires (66% chance). Explore shallow caves/ravines safely.</li>
-                <li><strong>Shelter fast</strong>: Dirt hut or hill carve-out. Place furnace inside for warmth and dim light (you can convert some of your wood to charcoal and burn cobblestone for example). Seal the entrance.</li>
+                <li><strong>Use campfires and furnaces for quick light</strong>: Bring your first reliable light sources into shallow caves and ravines while you prepare for torches.</li>
+                <li><strong>Shelter fast</strong>: Dirt hut or hill carve-out. Place furnace inside for some light.</li>
                 <li><strong>Night strategy</strong>: Stay inside and listen for spiders as they're your source of strings (and sleep).</li>
                 <li>3 strings + wool = bed. Sleep to skip dangerous nights. But remember, oversleeping without gearing up may make your world unnecessarily difficult.</li>
             </ul>
@@ -94,17 +93,18 @@ const modalData = {
 
             <h3>Progression Milestones</h3>
             <ul>
-                <li><strong>Days 0-5</strong>: From wooden to iron tools/sword, 20+ torches, bed, basic furnace running.</li>
-                <li><strong>Days 5-10</strong>: Full iron armor, shield, and blast furnace.</li>
-                <li><strong>Days 10-25</strong>: Diamond tools/sword, enchanting setup, deep cave runs.</li>
-                <li><strong>Days 25-50+</strong>: Netherite upgrades, beacons, potions - mobs are at peak threat.</li>
+                <li><strong>Tier 0 / Playtime 0-5 days</strong>: From wooden to iron tools/sword, bed, basic furnace running.</li>
+                <li><strong>Tier 1</strong>: 5 days of playtime + Stone Pickaxe advancement. Diamond Armour advancement can unlock it early.</li>
+                <li><strong>Tier 2</strong>: 10 days of playtime + Diamond advancement. Entering the End advancement can unlock it early.</li>
+                <li><strong>Tier 3</strong>: 25 days of playtime + Diamond Armour advancement. Summoning the Wither advancement can unlock it early.</li>
+                <li><strong>Tier 4</strong>: 50 days of playtime + Entering the End advancement. Full Netherite Armour advancement can unlock it early.</li>
             </ul>
 
-            <h3>Combat Shift: Shields Become Essential (Day 5+)</h3>
-            <p>Mobs get faster, hit harder, and tank more as days pass. Spam-clicking won't cut it anymore.</p>
+            <h3>Combat Shift: Shields Become Essential (Tier 1+)</h3>
+            <p>Mobs get faster, hit harder, and tank more as the nearby group advances. Spam-clicking won't cut it anymore.</p>
             <ul>
-                <li><strong>Early days (0-5)</strong>: Kite with distance. Use pillars and terrain against groups.</li>
-                <li><strong>Day 5 onward: Shield meta</strong>
+                <li><strong>Tier 0</strong>: Kite with distance. Use pillars and terrain against groups.</li>
+                <li><strong>Tier 1 onward: Shield meta</strong>
                     <ul>
                         <li>Right-click to block almost all melee damage.</li>
                         <li>1v1: Block - hit - backpedal.</li>
@@ -181,7 +181,7 @@ function renderPlateHTML(board) {
     }).join('');
 
     return `
-        <div class="plate-title"><div>Day ${board.day}</div><div>日</div></div>
+        <div class="plate-title"><div>${board.label}</div><div>级</div></div>
         <table class="plate-stats">
             <tr>${headers}</tr>
             <tr>${values}</tr>
