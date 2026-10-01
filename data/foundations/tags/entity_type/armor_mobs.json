@@ -1,6 +1,9 @@
 {
   "values": [
     "#foundations:speed_mobs",
+    "minecraft:enderman",
+    "minecraft:cave_spider",
+    "minecraft:silverfish",
     "minecraft:creeper",
     "minecraft:evoker",
     "minecraft:vindicator",

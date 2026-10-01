@@ -1,4 +1,4 @@
-const speedMobs = "Zombies, Skeletons, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes";
+const speedMobs = "Zombies, Skeletons, Spiders, Witches, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes";
 const armorMobs = "Zombies, Skeletons, Creepers, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins";
 const attackMobs = "Zombies, Skeletons, Spiders, Endermen, Witches, Silverfish, Stray, Husk, Drowned, Wither Skeletons, Piglin Brutes, Evokers, Vindicators, Pillagers, Ravagers, Breeze, Hoglins, Piglins, Zoglins, Phantoms";
 

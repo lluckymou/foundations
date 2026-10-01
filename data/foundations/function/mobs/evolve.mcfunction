@@ -16,10 +16,10 @@ execute at @s if score @s foundations_stage matches ..2 if entity @a[distance=..
 execute at @s if score @s foundations_stage matches ..3 if entity @a[distance=..32,gamemode=!spectator,advancements={minecraft:nether/netherite_armor=true}] run scoreboard players set @s foundations_stage 4
 
 # =======================================================
-# 2. SPEED
+# 2. SPEED (baby variants keep their vanilla speed)
 # =======================================================
-execute as @s[type=#foundations:speed_mobs] run execute store result score @s foundations_rng run random value 1..100
-execute as @s[type=#foundations:speed_mobs] run function foundations:mobs/speed_logic
+execute as @s[type=#foundations:speed_mobs] unless entity @s[nbt={IsBaby:1b}] run execute store result score @s foundations_rng run random value 1..100
+execute as @s[type=#foundations:speed_mobs] unless entity @s[nbt={IsBaby:1b}] run function foundations:mobs/speed_logic
 
 # =======================================================
 # 3. ATTACK (From tier 1)
