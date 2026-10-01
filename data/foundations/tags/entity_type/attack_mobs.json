@@ -1,6 +1,21 @@
 {
   "values": [
-    "#foundations:armor_mobs",
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:silverfish",
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:husk",
+    "minecraft:drowned",
+    "minecraft:wither_skeleton",
+    "minecraft:zombified_piglin",
+    "minecraft:piglin_brute",
+    "minecraft:enderman",
+    "minecraft:vindicator",
+    "minecraft:ravager",
+    "minecraft:hoglin",
+    "minecraft:piglin",
+    "minecraft:zoglin",
     "minecraft:phantom"
   ]
 }
